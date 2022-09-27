@@ -15,8 +15,13 @@ class Post extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'title',
         'description',
         'website_id',
     ];
+
+    public function website()
+    {
+        return $this->belongsTo(Website::class);
+    }
 }

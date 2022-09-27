@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Post\StoreRequest;
+use App\Http\Requests\Post\UpdateRequest;
 use App\Models\Post;
-use App\Requests\Post\StoreRequest;
-use App\Requests\Post\UpdateRequest;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller

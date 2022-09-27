@@ -31,7 +31,7 @@ class EventServiceProvider extends ServiceProvider
     {
         //
         Post::created(function ($p) {
-            $users = $p->website->users();
+            $users = $p->website->users;
             foreach ($users as $i => $user) {
                 SendNotificationPostJob::dispatch($user, $p);
             }

@@ -23,9 +23,9 @@ class CreateWebsiteTable extends Migration
 
         Schema::create('user_websites', function (Blueprint $table) {
             $table->id();
-            $table->integer('website_id')->unsigned();
+            $table->bigInteger('website_id')->unsigned();
             $table->foreign('website_id')->references('id')->on('websites')->onDelete('cascade');
-            $table->integer('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
@@ -34,16 +34,16 @@ class CreateWebsiteTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->integer('website_id')->unsigned();
+            $table->bigInteger('website_id')->unsigned();
             $table->foreign('website_id')->references('id')->on('websites')->onDelete('cascade');
             $table->timestamps();
         });
 
         Schema::create('user_notifications', function (Blueprint $table) {
             $table->id();
-            $table->integer('post_id')->unsigned();
+            $table->bigInteger('post_id')->unsigned();
             $table->foreign('post_id')->references('id')->on('websites')->onDelete('cascade');
-            $table->integer('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->boolean('status');
             $table->timestamps();

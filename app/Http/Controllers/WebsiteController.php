@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Website\SubscribeRequest;
 use App\Models\User;
 use App\Models\Website;
-use App\Requests\Website\SubscribeRequest;
 
 class WebsiteController extends Controller
 {
